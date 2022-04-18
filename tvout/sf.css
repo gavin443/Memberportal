@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Rokkitt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.d-none {
+  display: none;
+}
+
+.btn.btn-primary {
+  color: #fff;
+  background-color: #035597;
+  border-color: #035597;
+}
+
+.d-flex {
+  display: flex;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.h3,
+h3:not([class]) {
+  font-size: 1.422em;
+  line-height: 33px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  color: #13273f;
+}
+
+.h2,
+h2:not([class]) {
+  font-size: 2em;
+  font-family: "Rokkitt", serif;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: #13273f;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}
+
+.card.card-container {
+  padding: 40px;
+  border-radius: 10px;
+}
