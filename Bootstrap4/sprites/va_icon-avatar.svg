@@ -1,0 +1,15 @@
+<svg width="40" height="40" viewBox="0 0 60 60" fill="none" role="img" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="30" r="30" fill="#0060AE" />
+    <rect x="14.4582" y="15.2919" width="31.9167" height="30.25" rx="3.411" stroke="white" stroke-width="2.25" />
+    <path d="M23.4104 33C22.6604 35.625 24.1604 40.35 36.1604 38.25" stroke="white" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.2502 22.0833V25.4167Z" fill="white" />
+    <path d="M36.2502 22.0833V25.4167" stroke="white" stroke-width="2.25" stroke-linecap="square" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5835 22.0833V25.4167Z" fill="white" />
+    <path d="M24.5835 22.0833V25.4167" stroke="white" stroke-width="2.25" stroke-linecap="square" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M36.2502 9.58374V13.7504Z" fill="white" />
+    <path d="M36.2502 9.58374V13.7504" stroke="white" stroke-width="2.25" stroke-linecap="square" />
+    <circle cx="36.2502" cy="8.33345" r="2.5" fill="white" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5835 9.58374V13.7504Z" fill="white" />
+    <path d="M24.5835 9.58374V13.7504" stroke="white" stroke-width="2.25" stroke-linecap="square" />
+    <circle cx="24.5834" cy="8.33345" r="2.5" fill="white" />
+</svg>
