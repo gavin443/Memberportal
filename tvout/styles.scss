@@ -133,10 +133,10 @@ h3.line-title {
     div:first-of-type {
       border-radius: 4px 0 0 4px;
       background-color: $alert-color;
-      i {
-        padding: 16px;
-        color: #fff;
+      img {
+        margin: 8px;
         align-self: center;
+        min-width: 16px;
       }
     }
 
