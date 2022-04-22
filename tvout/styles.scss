@@ -1,5 +1,5 @@
 $completed-step-color: #a1cf55;
-$step-color: #a1cf55;
+$step-color: #035597;
 $alert-color: #035597;
 
 h3.line-title {
@@ -12,11 +12,27 @@ h3.line-title {
   }
 }
 
+.d-visible {
+  visibility: hidden;
+}
+
+[data-errormsg] {
+  margin-bottom: 10px;
+  display: block;
+  color: var(--red);
+}
+
+.flex-controls {
+  align-items: center;
+  justify-content: space-between;
+}
+
 //for mobile steps
 //progress li{width: 20%;}
 
 .estimate-wrapper {
   display: flex;
+  align-items: baseline;
   label,
   input[type="radio"] {
     margin-right: 10px;
@@ -37,6 +53,7 @@ h3.line-title {
   counter-reset: step;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding-left: 0px;
 }
 
@@ -47,19 +64,20 @@ h3.line-title {
   list-style-type: none;
   width: 15%;
   font-size: 12px;
+  line-height: 20px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: font-weight 0.5s;
+  //transition: font-weight 0.5s;
   //color: $step-color;
 }
 .progressbar li:before {
   width: 30px;
   height: 30px;
-  content: "";
-  /*content: counter(step);
-    counter-increment: step;*/
-  line-height: 30px;
+  //content: "";
+  content: counter(step);
+  counter-increment: step;
+  line-height: 20px;
   border: 6px solid $step-color;
   display: block;
   text-align: center;
@@ -83,6 +101,7 @@ h3.line-title {
   margin: 0 auto 10px auto;
   border-radius: 50%;
   background-color: white;
+  color: $alert-color;
 }
 
 .progressbar li:after {
@@ -98,15 +117,28 @@ h3.line-title {
 .progressbar li:first-child:after {
   content: none;
 }
-.progressbar li.completed {
-  //color: $base-step-color;
-}
-.progressbar li.completed:before,
+
+//.progressbar li.completed {
+//color: $base-step-color;
+//}
 .progressbar li.active:before {
-  border-color: $completed-step-color;
+  border-color: $step-color;
+  color: $step-color;
+}
+
+.progressbar li.completed:before {
   color: $completed-step-color;
 }
-.progressbar li.completed + li:after {
+
+// .progressbar li.completed + li:after {
+//   background-color: $completed-step-color;
+// }
+
+.progressbar li.active:after {
+  background-color: $step-color;
+}
+
+.progressbar li.completed:after {
   background-color: $completed-step-color;
 }
 

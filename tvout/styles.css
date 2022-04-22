@@ -8,8 +8,24 @@ h3.line-title span {
   padding: 0 10px 0 0px;
 }
 
+.d-visible {
+  visibility: hidden;
+}
+
+[data-errormsg] {
+  margin-bottom: 10px;
+  display: block;
+  color: var(--red);
+}
+
+.flex-controls {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .estimate-wrapper {
   display: flex;
+  align-items: baseline;
 }
 .estimate-wrapper label,
 .estimate-wrapper input[type=radio] {
@@ -28,6 +44,7 @@ h3.line-title span {
   counter-reset: step;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding-left: 0px;
 }
 
@@ -39,20 +56,19 @@ h3.line-title span {
   list-style-type: none;
   width: 15%;
   font-size: 12px;
+  line-height: 20px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: font-weight 0.5s;
 }
 
 .progressbar li:before {
   width: 30px;
   height: 30px;
-  content: "";
-  /*content: counter(step);
-    counter-increment: step;*/
-  line-height: 30px;
-  border: 6px solid #a1cf55;
+  content: counter(step);
+  counter-increment: step;
+  line-height: 20px;
+  border: 6px solid #035597;
   display: block;
   text-align: center;
   margin: 0 auto 10px auto;
@@ -75,6 +91,7 @@ h3.line-title span {
   margin: 0 auto 10px auto;
   border-radius: 50%;
   background-color: white;
+  color: #035597;
 }
 
 .progressbar li:after {
@@ -82,7 +99,7 @@ h3.line-title span {
   height: 10px;
   content: "";
   position: absolute;
-  background-color: #a1cf55;
+  background-color: #035597;
   top: 10px;
   left: -50%;
   z-index: -1;
@@ -92,13 +109,20 @@ h3.line-title span {
   content: none;
 }
 
-.progressbar li.completed:before,
 .progressbar li.active:before {
-  border-color: #a1cf55;
+  border-color: #035597;
+  color: #035597;
+}
+
+.progressbar li.completed:before {
   color: #a1cf55;
 }
 
-.progressbar li.completed + li:after {
+.progressbar li.active:after {
+  background-color: #035597;
+}
+
+.progressbar li.completed:after {
   background-color: #a1cf55;
 }
 

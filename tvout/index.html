@@ -26,31 +26,30 @@ And if required,add a common CSS class name for all icon elements, for example â
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css" />
-    <link
-      rel="stylesheet"
-      href="/Bootstrap4/css/main.css"
-    />
-    <script src="script.js"></script>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>
-        Transfer out details
-      </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in</p>
-      <div class="card card-container shadow">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css" />
+  <link rel="stylesheet" href="/Bootstrap4/css/main.css" />
+  <script src="script.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      Transfer out details
+    </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in</p>
+    <div class="card card-container shadow">
       <ul class="progressbar">
         <li data-transferstep="0" class="active">Estimate</li>
-        <li data-transferstep="1" >Video</li>
-        <li data-transferstep="2" >Guidance</li>
+        <li data-transferstep="1">Video</li>
+        <li data-transferstep="2">Guidance</li>
         <li data-transferstep="3">Your options</li>
         <li data-transferstep="4">Confirmation</li>
       </ul>
@@ -58,53 +57,119 @@ And if required,add a common CSS class name for all icon elements, for example â
         <h3 class="h3 line-title"><span>Your Estimate</span></h3>
         <p>Have you had an estimate?</p>
         <div class="control-gap estimate-wrapper">
-          <input type="radio" id="estimate-yes" name="request-estimate" value="Yes">
+          <input type="radio" id="estimate-yes-mck" name="request-estimate" data-text="true" value="Yes">
           <label for="estimate-yes">Yes</label><br>
-          <input type="radio" id="estimate-no" name="request-estimate" value="No">
+          <input type="radio" id="estimate-no-mck" name="request-estimate" data-text="false" value="No">
           <label for="estimate-no">No</label><br>
         </div>
-        <div class="notification-alert">
+        <div class="notification-alert step-text d-none">
           <div class="notification-alert-wrapper">
             <div class="d-flex"><img src="/Bootstrap4/sprites/white-warning.svg"></i></div>
             <div class="notification-alert-content">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>    
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+              </p>
             </div>
           </div>
         </div>
-        <button
-        type="button"
-        class="btn btn-primary next-section"
-      >
-        Request an estimate
-      </button>
-      <a href="#">Cancel</a>
+        <div class="d-flex flex-controls">
+          <div>
+            <button data-tranferbtn="0" type="button" class="btn btn-primary request  d-none" >Request an estimate
+            </button>
+            <a href="#">Cancel</a>
+          </div>
+          <button data-tranferbtn="0" type="button" class="btn btn-primary next-section d-none" >Next</button>
+        </div>
       </section>
       <section class="step-detail d-none" data-tranferpage="1">
         <h3 class="h3 line-title"><span>Video</span></h3>
-        <button
-        type="button"
-        class="btn btn-primary next-section"
-      >
-        Next
-      </button>
+        <p>Have you watched the video?</p>
+        <div class="control-gap estimate-wrapper">
+          <input type="radio" id="video-yes-mck" name="request-video" value="Yes">
+          <label for="video-yes-mck">Yes</label><br>
+          <input type="radio" id="video-no-mck" name="request-video" value="No">
+          <label for="video-no-mck">No</label><br>     
+        </div>
+        <div class="d-flex flex-controls">
+          <div>
+            <button type="button" class="btn btn-primary prev-section">
+              Previous
+            </button>
+            <a href="#">Cancel</a>
+          </div>
+
+          <button data-tranferbtn="1" type="button" class="btn btn-primary next-section d-none">
+            Next
+          </button>
+        </div>
       </section>
       <section class="step-detail d-none" data-tranferpage="2">
         <h3 class="h3 line-title"><span>Guidance</span></h3>
-        <button
-        type="button"
-        class="btn btn-primary next-section"
-      >
-        Next
-      </button>
+        <p>Have you read and understood the guidance?</p>
+        <div class="control-gap estimate-wrapper">
+          <input type="radio" id="guidance-yes-mck" name="request-guidance" value="Yes">
+          <label for="guidance-yes-mck">Yes</label><br>
+          <input type="radio" id="guidance-yes-mck" name="request-guidance" value="No">
+          <label for="guidance-no-mck">No</label><br>
+        </div>
+    
+        <div class="d-flex flex-controls">
+          <div>
+            <button type="button" class="btn btn-primary prev-section">
+              Previous
+            </button>
+            <a href="#">Cancel</a>
+          </div>
+
+          <button data-tranferbtn="2" type="button" class="btn btn-primary next-section d-none">
+            Next
+          </button>
+        </div>
+      </section>
+      <section class="step-detail d-none" data-tranferpage="3">
+        <h3 class="h3 line-title"><span>Your current options</span></h3>
+        <p>Are you happy to continue to request a transfer out quote and associated forms?</p>
+        <div class="control-gap estimate-wrapper">
+          <input type="radio" id="continue-yes-mck" name="request-continue" data-text="false" value="Yes">
+          <label for="conitinue-yes-mck">Yes</label><br>
+          <input type="radio" id="continue-no-mck" name="request-continue" data-text="true" value="No">
+          <label for="conitinue-no-mck">No</label><br>
+        </div>
+        <div class="read-more d-none"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.</p><a href="#">Read more</a></div>
+        <div class="step-text d-none">
+        <p>Please select what you would like to transfer out from the options below</p>
+        <div class="control-gap">
+          <input type="radio" id="db-option-mck" name="transfer-option" value="DB">
+          <label for="db-option-mck"> DB</label><br>
+          <input type="radio" id="BRASS-option-mck" name="transfer-option" value="BRASS">
+          <label for="BRASS-option-mck"> BRASS</label><br>
+          <input type="radio" id="AVCE-option-mck" name="transfer-option" value="AVC Extra">
+          <label for="AVCE-option-mck"> AVC Extra</label><br>
+        </div>
+        </div>
+        <div class="d-flex flex-controls">
+          <div>
+            <button type="button" class="btn btn-primary prev-section">
+              Previous
+            </button>
+            <a href="#">Cancel</a>
+          </div>
+
+          <button data-tranferbtn="3" type="button" class="btn btn-primary next-section d-none">
+            Submit
+          </button>
+        </div>
       </section>
       <div>
-    </div>
-    <script type="text/javascript">
-      (function () {
-        new TransferOutWidget("mck");
-      })();
-    </script>
-  </body>
+      </div>
+      <script type="text/javascript">
+        (function () {
+          new TransferOutWidget("mck");
+        })();
+      </script>
+</body>
+
 </html>
