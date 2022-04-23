@@ -34,7 +34,7 @@ And if required,add a common CSS class name for all icon elements, for example â
   <title>Document</title>
   <link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css" />
   <link rel="stylesheet" href="/Bootstrap4/css/main.css" />
-  <script src="script.js"></script>
+  <script src="/out/script.js"></script>
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -47,13 +47,13 @@ And if required,add a common CSS class name for all icon elements, for example â
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in</p>
     <div class="card card-container shadow">
       <ul class="progressbar">
-        <li data-transferstep="0" class="active">Estimate</li>
-        <li data-transferstep="1">Video</li>
-        <li data-transferstep="2">Guidance</li>
-        <li data-transferstep="3">Your options</li>
-        <li data-transferstep="4">Confirmation</li>
+        <li data-transferstep="0" class="active"><span>Estimate</span></li>
+        <li data-transferstep="1"><span>Video</span></li>
+        <li data-transferstep="2"><span>Guidance</span></li>
+        <li data-transferstep="3"><span>Your options</span></li>
+        <li data-transferstep="4"><span>Confirmation</span></li>
       </ul>
-      <section class="step-detail" data-tranferpage="0">
+      <section class="step-detail" data-transferpage="0">
         <h3 class="h3 line-title"><span>Your Estimate</span></h3>
         <p>Have you had an estimate?</p>
         <div class="control-gap estimate-wrapper">
@@ -76,14 +76,14 @@ And if required,add a common CSS class name for all icon elements, for example â
         </div>
         <div class="d-flex flex-controls">
           <div>
-            <button data-tranferbtn="0" type="button" class="btn btn-primary request  d-none" >Request an estimate
+            <button data-transferbtn="0" type="button" class="btn btn-primary request  d-none" >Request an estimate
             </button>
             <a href="#">Cancel</a>
           </div>
-          <button data-tranferbtn="0" type="button" class="btn btn-primary next-section d-none" >Next</button>
+          <button data-transferbtn="0" type="button" class="btn btn-primary next-section d-none" >Next</button>
         </div>
       </section>
-      <section class="step-detail d-none" data-tranferpage="1">
+      <section class="step-detail d-none" data-transferpage="1">
         <h3 class="h3 line-title"><span>Video</span></h3>
         <p>Have you watched the video?</p>
         <div class="control-gap estimate-wrapper">
@@ -100,12 +100,12 @@ And if required,add a common CSS class name for all icon elements, for example â
             <a href="#">Cancel</a>
           </div>
 
-          <button data-tranferbtn="1" type="button" class="btn btn-primary next-section d-none">
+          <button data-transferbtn="1" type="button" class="btn btn-primary next-section d-none">
             Next
           </button>
         </div>
       </section>
-      <section class="step-detail d-none" data-tranferpage="2">
+      <section class="step-detail d-none" data-transferpage="2">
         <h3 class="h3 line-title"><span>Guidance</span></h3>
         <p>Have you read and understood the guidance?</p>
         <div class="control-gap estimate-wrapper">
@@ -123,12 +123,12 @@ And if required,add a common CSS class name for all icon elements, for example â
             <a href="#">Cancel</a>
           </div>
 
-          <button data-tranferbtn="2" type="button" class="btn btn-primary next-section d-none">
+          <button data-transferbtn="2" type="button" class="btn btn-primary next-section d-none">
             Next
           </button>
         </div>
       </section>
-      <section class="step-detail d-none" data-tranferpage="3">
+      <section class="step-detail d-none" data-transferpage="3">
         <h3 class="h3 line-title"><span>Your current options</span></h3>
         <p>Are you happy to continue to request a transfer out quote and associated forms?</p>
         <div class="control-gap estimate-wrapper">
@@ -150,6 +150,11 @@ And if required,add a common CSS class name for all icon elements, for example â
           <label for="AVCE-option-mck"> AVC Extra</label><br>
         </div>
         </div>
+        <div class="content-box-blue p-3 mb-4 mt-4">
+          <h4>Transfer out warning message</h4>
+          <p>Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+            Nam pulvinar blandit velit, id condimentum diam faucibus at. Aliquam lacus nisi, sollicitudin at nisi nec, fermentum congue felis. Quisque mauris dolor, fringilla sed tincidunt ac, finibus non odio. Sed vitae mauris nec ante pretium finibus. Donec nisl neque, pharetra ac elit eu, faucibus aliquam ligula. Nullam dictum, tellus tincidunt tempor laoreet, nibh elit sollicitudin felis, eget feugiat sapien diam nec nisl. Aenean gravida turpis nisi, consequat dictum risus dapibus a. Duis felis ante, varius in neque eu, tempor suscipit sem. Maecenas ullamcorper gravida sem sit amet cursus. Etiam pulvinar purus vitae justo pharetra consequat. Mauris id mi ut arcu feugiat maximus. Mauris consequat tellus id tempus aliquet.</p>
+        </div>
         <div class="d-flex flex-controls">
           <div>
             <button type="button" class="btn btn-primary prev-section">
@@ -158,7 +163,7 @@ And if required,add a common CSS class name for all icon elements, for example â
             <a href="#">Cancel</a>
           </div>
 
-          <button data-tranferbtn="3" type="button" class="btn btn-primary next-section d-none">
+          <button data-transferbtn="3" type="button" class="btn btn-primary next-section d-none">
             Submit
           </button>
         </div>

@@ -1,6 +1,47 @@
+/*sf style changes
+div.process-progress-bar .progress-orb-text {
+     line-height: 49px; 
+     font-weight: bold; 
+    line-height: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+div.process-progress-bar .selected {
+    border: 1px solid #035597;
+    border: 6px solid #a1cf55;
+}
+
+div.process-progress-bar .progress-orb {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 6px solid #a1cf55;
+}
+
+div.process-progress-bar .divider {
+    margin-top: 12px;
+    border-top: 6px solid #a1cf55;
+}
+
+div.process-progress-bar .complete {
+
+    fill: #a1cf55;
+    border: 6px solid #a1cf55;
+}
+
+element style of svg tick -
+element.style {
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+}
+*/
 $completed-step-color: #a1cf55;
-$step-color: #035597;
+$step-color: #a1cf55;
 $alert-color: #035597;
+$non-active-color: #d5d8ec;
 
 h3.line-title {
   border-bottom: 1px solid #dee2e6;
@@ -25,6 +66,7 @@ h3.line-title {
 .flex-controls {
   align-items: center;
   justify-content: space-between;
+  line-height: 38px;
 }
 
 //for mobile steps
@@ -64,12 +106,12 @@ h3.line-title {
   list-style-type: none;
   width: 15%;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 18px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
   //transition: font-weight 0.5s;
-  //color: $step-color;
+  color: $non-active-color;
 }
 .progressbar li:before {
   width: 30px;
@@ -77,7 +119,6 @@ h3.line-title {
   //content: "";
   content: counter(step);
   counter-increment: step;
-  line-height: 20px;
   border: 6px solid $step-color;
   display: block;
   text-align: center;
@@ -123,7 +164,7 @@ h3.line-title {
 //}
 .progressbar li.active:before {
   border-color: $step-color;
-  color: $step-color;
+  //color: $step-color;
 }
 
 .progressbar li.completed:before {
@@ -139,17 +180,21 @@ h3.line-title {
 }
 
 .progressbar li.completed:after {
-  background-color: $completed-step-color;
+  background-color: $step-color;
 }
 
 .progressbar li.active {
-  font-weight: 600;
+  color: initial;
 }
 
 @media only screen and (max-width: 768px) {
   .progressbar li {
     width: 20%;
-    font-size: 8px;
+    font-size: 12px;
+  }
+
+  .progressbar li span {
+    display: none;
   }
 }
 

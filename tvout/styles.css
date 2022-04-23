@@ -1,3 +1,43 @@
+/*sf style changes
+div.process-progress-bar .progress-orb-text {
+     line-height: 49px; 
+     font-weight: bold; 
+    line-height: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+div.process-progress-bar .selected {
+    border: 1px solid #035597;
+    border: 6px solid #a1cf55;
+}
+
+div.process-progress-bar .progress-orb {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 6px solid #a1cf55;
+}
+
+div.process-progress-bar .divider {
+    margin-top: 12px;
+    border-top: 6px solid #a1cf55;
+}
+
+div.process-progress-bar .complete {
+
+    fill: #a1cf55;
+    border: 6px solid #a1cf55;
+}
+
+element style of svg tick -
+element.style {
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+}
+*/
 h3.line-title {
   border-bottom: 1px solid #dee2e6;
   line-height: 0.1em;
@@ -21,6 +61,7 @@ h3.line-title span {
 .flex-controls {
   align-items: center;
   justify-content: space-between;
+  line-height: 38px;
 }
 
 .estimate-wrapper {
@@ -56,10 +97,11 @@ h3.line-title span {
   list-style-type: none;
   width: 15%;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 18px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
+  color: #d5d8ec;
 }
 
 .progressbar li:before {
@@ -67,8 +109,7 @@ h3.line-title span {
   height: 30px;
   content: counter(step);
   counter-increment: step;
-  line-height: 20px;
-  border: 6px solid #035597;
+  border: 6px solid #a1cf55;
   display: block;
   text-align: center;
   margin: 0 auto 10px auto;
@@ -99,7 +140,7 @@ h3.line-title span {
   height: 10px;
   content: "";
   position: absolute;
-  background-color: #035597;
+  background-color: #a1cf55;
   top: 10px;
   left: -50%;
   z-index: -1;
@@ -110,8 +151,7 @@ h3.line-title span {
 }
 
 .progressbar li.active:before {
-  border-color: #035597;
-  color: #035597;
+  border-color: #a1cf55;
 }
 
 .progressbar li.completed:before {
@@ -119,7 +159,7 @@ h3.line-title span {
 }
 
 .progressbar li.active:after {
-  background-color: #035597;
+  background-color: #a1cf55;
 }
 
 .progressbar li.completed:after {
@@ -127,13 +167,17 @@ h3.line-title span {
 }
 
 .progressbar li.active {
-  font-weight: 600;
+  color: initial;
 }
 
 @media only screen and (max-width: 768px) {
   .progressbar li {
     width: 20%;
-    font-size: 8px;
+    font-size: 12px;
+  }
+
+  .progressbar li span {
+    display: none;
   }
 }
 .notification-alert {
