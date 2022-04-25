@@ -32,7 +32,9 @@ And if required,add a common CSS class name for all icon elements, for example â
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css" />
+  <!--<link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+font-awesome/6.1.1/css/all.min.css"/>
   <link rel="stylesheet" href="/Bootstrap4/css/main.css" />
   <script src="/out/script.js"></script>
 
@@ -85,6 +87,9 @@ And if required,add a common CSS class name for all icon elements, for example â
       </section>
       <section class="step-detail d-none" data-transferpage="1">
         <h3 class="h3 line-title"><span>Video</span></h3>
+        <div class="embed-responsive embed-responsive-16by9 mb-1">
+        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/347119375?h=1699409fe2&color=ef2200&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
         <p>Have you watched the video?</p>
         <div class="control-gap estimate-wrapper">
           <input type="radio" id="video-yes-mck" name="request-video" value="Yes">
@@ -107,7 +112,9 @@ And if required,add a common CSS class name for all icon elements, for example â
       </section>
       <section class="step-detail d-none" data-transferpage="2">
         <h3 class="h3 line-title"><span>Guidance</span></h3>
-        <p>Have you read and understood the guidance?</p>
+        <p>Integer et risus arcu. Suspendisse potenti. Proin posuere ligula quis commodo pretium. Duis iaculis, urna vel semper rutrum, ante erat eleifend erat, non rhoncus sapien ipsum eget nunc. Nullam ipsum lectus, aliquam vel tempor sit amet, pharetra a justo. Integer dapibus tortor eu tempor sagittis. Nam vulputate finibus maximus. Cras blandit placerat est, in mattis ante commodo in.
+          Sed luctus mauris eget nisl eleifend eleifend. Nunc eget ligula porttitor, dictum erat id, egestas lacus. Aliquam non mauris lacus. Cras et sapien nunc. Aenean ornare, ipsum sed rutrum efficitur, lorem leo luctus magna, eu tristique est nulla a enim. Nunc consectetur est aliquam ligula rutrum, eu commodo urna porttitor. Nullam consequat augue tortor, </p>
+        <p>Have you read the guidance?</p>
         <div class="control-gap estimate-wrapper">
           <input type="radio" id="guidance-yes-mck" name="request-guidance" value="Yes">
           <label for="guidance-yes-mck">Yes</label><br>
@@ -138,19 +145,25 @@ And if required,add a common CSS class name for all icon elements, for example â
           <label for="conitinue-no-mck">No</label><br>
         </div>
         <div class="read-more d-none"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua.</p><a href="#">Read more</a></div>
+          dolore magna aliqua.</p>
+          <p><a href="#">Read more</a></p>
+        </div>
         <div class="step-text d-none">
         <p>Please select what you would like to transfer out from the options below</p>
-        <div class="control-gap">
-          <input type="radio" id="db-option-mck" name="transfer-option" value="DB">
-          <label for="db-option-mck"> DB</label><br>
-          <input type="radio" id="BRASS-option-mck" name="transfer-option" value="BRASS">
-          <label for="BRASS-option-mck"> BRASS</label><br>
-          <input type="radio" id="AVCE-option-mck" name="transfer-option" value="AVC Extra">
-          <label for="AVCE-option-mck"> AVC Extra</label><br>
+        <div>
+          <input type="radio" id="db-option-mck" name="transfer-option" value="DBApplicable">
+          <label for="db-option-mck"> Transfer DB (and any AVCs applicable)</label><br>
+          <input type="radio" id="BRASS-option-mck" name="transfer-option" value="DBAVCExtra">
+          <label for="BRASS-option-mck"> Transfer DB & AVC Extra</label><br>
+          <input type="radio" id="AVCE-option-mck" name="transfer-option" value="DBAVCExtra">
+          <label for="AVCE-option-mck"> Transfer BRASS & AVC Extra</label><br>
+          <input type="radio" id="DB-option-mck" name="transfer-option" value="DB">
+          <label for="DB-option-mck"> Transfer DB only</label><br>
+          <input type="radio" id="BRASSOnly-option-mck" name="transfer-option" value="DBOnly">
+          <label for="BRASSOnly-option-mck"> Transfer BRASS</label><br>
         </div>
         </div>
-        <div class="content-box-blue p-3 mb-4 mt-4">
+        <div class="content-box-blue p-3 mb-4 mt-4 d-none">
           <h4>Transfer out warning message</h4>
           <p>Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
             Nam pulvinar blandit velit, id condimentum diam faucibus at. Aliquam lacus nisi, sollicitudin at nisi nec, fermentum congue felis. Quisque mauris dolor, fringilla sed tincidunt ac, finibus non odio. Sed vitae mauris nec ante pretium finibus. Donec nisl neque, pharetra ac elit eu, faucibus aliquam ligula. Nullam dictum, tellus tincidunt tempor laoreet, nibh elit sollicitudin felis, eget feugiat sapien diam nec nisl. Aenean gravida turpis nisi, consequat dictum risus dapibus a. Duis felis ante, varius in neque eu, tempor suscipit sem. Maecenas ullamcorper gravida sem sit amet cursus. Etiam pulvinar purus vitae justo pharetra consequat. Mauris id mi ut arcu feugiat maximus. Mauris consequat tellus id tempus aliquet.</p>

@@ -101,6 +101,7 @@ h3.line-title span {
   position: relative;
   text-align: center;
   text-transform: uppercase;
+  counter-increment: step;
   color: #d5d8ec;
 }
 
@@ -108,7 +109,6 @@ h3.line-title span {
   width: 30px;
   height: 30px;
   content: counter(step);
-  counter-increment: step;
   border: 6px solid #a1cf55;
   display: block;
   text-align: center;
@@ -123,8 +123,6 @@ h3.line-title span {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f00c";
-  /*content: counter(step);
-    counter-increment: step;*/
   line-height: 20px;
   border: 6px solid #a1cf55;
   display: block;
@@ -170,7 +168,15 @@ h3.line-title span {
   color: initial;
 }
 
+.embed-responsive {
+  width: 50%;
+}
+
 @media only screen and (max-width: 768px) {
+  .embed-responsive {
+    width: 100%;
+  }
+
   .progressbar li {
     width: 20%;
     font-size: 12px;
@@ -180,6 +186,10 @@ h3.line-title span {
     display: none;
   }
 }
+.video-wrapper iframe .vp-center {
+  justify-content: flex-start;
+}
+
 .notification-alert {
   position: relative;
   display: block;

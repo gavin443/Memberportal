@@ -111,6 +111,7 @@ h3.line-title {
   text-align: center;
   text-transform: uppercase;
   //transition: font-weight 0.5s;
+  counter-increment: step;
   color: $non-active-color;
 }
 .progressbar li:before {
@@ -118,7 +119,6 @@ h3.line-title {
   height: 30px;
   //content: "";
   content: counter(step);
-  counter-increment: step;
   border: 6px solid $step-color;
   display: block;
   text-align: center;
@@ -133,8 +133,7 @@ h3.line-title {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f00c";
-  /*content: counter(step);
-    counter-increment: step;*/
+  //content: counter(step);
   line-height: 20px;
   border: 6px solid $completed-step-color;
   display: block;
@@ -187,7 +186,15 @@ h3.line-title {
   color: initial;
 }
 
+.embed-responsive {
+  width: 50%;
+}
+
 @media only screen and (max-width: 768px) {
+  .embed-responsive {
+    width: 100%;
+  }
+
   .progressbar li {
     width: 20%;
     font-size: 12px;
@@ -196,6 +203,10 @@ h3.line-title {
   .progressbar li span {
     display: none;
   }
+}
+
+.video-wrapper iframe .vp-center {
+  justify-content: flex-start;
 }
 
 .notification-alert {

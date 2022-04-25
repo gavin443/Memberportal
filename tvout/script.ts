@@ -21,22 +21,20 @@ class TransferOutWidget {
   private validateOptions(): void {
     //some data-set values can be the reverse of the data-set, for consistency use a data-tag
     const canShow: boolean =
-      (<HTMLInputElement>(
-        document.querySelector(
-          `[data-transferpage='${this.pageCount}'] input[name^="request-"]:checked`
-        )
-      ))?.dataset.text == "true";
+      document.querySelector<HTMLInputElement>(
+        `[data-transferpage='${this.pageCount}'] input[name^="request-"]:checked`
+      )?.dataset.text == "true";
 
     const noneChecked =
       document.querySelectorAll(
         `[data-transferpage='${this.pageCount}'] input[name^="request-"]:checked`
       ).length > 0;
 
-    (<HTMLInputElement>(
-      document.querySelector(
+    document
+      .querySelector<HTMLInputElement>(
         `[data-transferpage='${this.pageCount}'] .step-text`
       )
-    ))?.classList.toggle("d-none", canShow);
+      ?.classList.toggle("d-none", canShow);
 
     switch (this.pageCount) {
       case 0:
@@ -61,6 +59,11 @@ class TransferOutWidget {
         document
           .querySelector<HTMLInputElement>(
             `[data-transferbtn='${this.pageCount}'].next-section`
+          )
+          ?.classList.toggle("d-none", canShow);
+        document
+          .querySelector<HTMLInputElement>(
+            `[data-transferpage='${this.pageCount}'] .content-box-blue`
           )
           ?.classList.toggle("d-none", canShow);
         break;
