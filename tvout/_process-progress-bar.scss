@@ -1,0 +1,65 @@
+div.process-progress-bar {
+  .progress-orb {
+    border-radius: 50%;
+    border: 6px solid $colour-success;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: $colour-base-tone-1000;
+  }
+
+  .progress-orb-text {
+    font-weight: normal;
+    line-height: 18px;
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+
+  .progress-label-highlighted {
+    font-weight: bold;
+    color: $colour-primary;
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+  }
+
+  .selected {
+    border: 6px solid #a1cf55;
+    background: none;
+    color: #212529;
+  }
+
+  .complete {
+    border: 6px solid $colour-success;
+    background: none;
+    fill: $colour-success;
+
+    svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+
+  .divider {
+    width: 30px;
+    height: 1px;
+    color: $colour-base-tone-600;
+    margin-top: 12px;
+    border-top: 6px solid $colour-success;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    .divider {
+      width: 120px;
+    }
+  }
+
+  .progress-label {
+    position: absolute;
+    width: 120px;
+    word-wrap: break-word;
+    margin-left: -48px;
+    font-size: 0.9375rem;
+    text-align: center;
+    line-height: 1.125rem;
+  }
+}

@@ -19,22 +19,26 @@ class TransferOutWidget {
   }
 
   private validateOptions(): void {
-    //some data-set values can be the reverse of the data-set, for consistency use a data-tag
-    const canShow: boolean =
+    const isTrue: boolean =
       document.querySelector<HTMLInputElement>(
         `[data-transferpage='${this.pageCount}'] input[name^="request-"]:checked`
-      )?.dataset.text == "true";
+      )?.value == "Yes";
 
-    const noneChecked =
+    const isRequestChecked =
       document.querySelectorAll(
         `[data-transferpage='${this.pageCount}'] input[name^="request-"]:checked`
+      ).length > 0;
+
+    const isTransferChecked =
+      document.querySelectorAll(
+        `[data-transferpage='${this.pageCount}'] input[name^="transfer-option"]:checked`
       ).length > 0;
 
     document
       .querySelector<HTMLInputElement>(
         `[data-transferpage='${this.pageCount}'] .step-text`
       )
-      ?.classList.toggle("d-none", canShow);
+      ?.classList.toggle("d-none", isTrue);
 
     switch (this.pageCount) {
       case 0:
@@ -42,42 +46,46 @@ class TransferOutWidget {
           .querySelector<HTMLInputElement>(
             `[data-transferbtn='${this.pageCount}'].request`
           )
-          ?.classList.toggle("d-none", canShow);
+          ?.classList.toggle("d-none", isTrue);
 
         document
           .querySelector<HTMLInputElement>(
             `[data-transferbtn='${this.pageCount}'].next-section`
           )
-          ?.classList.toggle("d-none", !canShow);
+          ?.classList.toggle("d-none", !isTrue);
         break;
       case 3:
         document
           .querySelector<HTMLInputElement>(
             `[data-transferpage='${this.pageCount}'] .read-more`
           )
-          ?.classList.toggle("d-none", !canShow);
+          ?.classList.toggle("d-none", isTrue);
         document
           .querySelector<HTMLInputElement>(
             `[data-transferbtn='${this.pageCount}'].next-section`
           )
-          ?.classList.toggle("d-none", canShow);
+          ?.classList.toggle("d-none", !(isTransferChecked && isTrue));
         document
           .querySelector<HTMLInputElement>(
-            `[data-transferpage='${this.pageCount}'] .content-box-blue`
+            `[data-transferpage='${this.pageCount}'] .step-text`
           )
-          ?.classList.toggle("d-none", canShow);
+          ?.classList.toggle("d-none", !isTrue);
         break;
       default:
         document
           .querySelector<HTMLInputElement>(
             `[data-transferbtn='${this.pageCount}'].next-section`
           )
-          ?.classList.toggle("d-none", !noneChecked);
+          ?.classList.toggle("d-none", !isRequestChecked);
         break;
     }
   }
 
   private setupListeners(): void {
+    document.querySelector("iframe").onload = function () {
+      console.log("iframe loaded");
+    };
+
     this.transferOptions.forEach((node) => {
       node.addEventListener("click", () => {
         this.validateOptions();

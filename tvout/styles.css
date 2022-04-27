@@ -7,8 +7,7 @@ div.process-progress-bar .progress-orb-text {
     letter-spacing: 0;
 }
 
-div.process-progress-bar .selected {
-    border: 1px solid #035597;
+div.process-progress-bar .selected {  
     border: 6px solid #a1cf55;
 }
 
@@ -52,12 +51,6 @@ h3.line-title span {
   visibility: hidden;
 }
 
-[data-errormsg] {
-  margin-bottom: 10px;
-  display: block;
-  color: var(--red);
-}
-
 .flex-controls {
   align-items: center;
   justify-content: space-between;
@@ -96,13 +89,13 @@ h3.line-title span {
 .progressbar li {
   list-style-type: none;
   width: 15%;
-  font-size: 12px;
   line-height: 18px;
   position: relative;
   text-align: center;
-  text-transform: uppercase;
   counter-increment: step;
   color: #d5d8ec;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
 }
 
 .progressbar li:before {
