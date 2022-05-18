@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!--<link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="/Bootstrap4/css/main.css" />
+  <script src="../out/retirement/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      Benefit Request
+    </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in</p>
+    <div class="card card-container shadow">
+
+      <p class="dob-label">Please input you retirement date</p>
+
+      <div class="control-gap">
+        <fieldset class="dob-inputs mr-1">
+          <label class="label helper-text" for="DateOfBirthDay">DD</label>
+          <input name="DateOfBirthDay" type="number" min="1" max="31" class="form-control dob-single-part"
+            id="date-of-birth-day" pattern="[0-9]*" inputmode="numeric">
+        </fieldset>
+        <fieldset class="dob-inputs mr-1">
+          <label class="label helper-text" for="DateOfBirthMonth">MM</label>
+          <input name="DateOfBirthMonth" type="number" max="12" min="1" class="form-control dob-single-part"
+            id="date-of-birth-day" pattern="[0-9]*" inputmode="numeric">
+        </fieldset>
+        <fieldset class="dob-inputs mr-1">
+          <label class="label helper-text" for="DateOfBirthYear">YY</label>
+          <input name="DateOfBirthYear" type="number" minlength="4" maxlength="4" class="form-control dob-single-part"
+            id="date-of-birth-day" pattern="[0-9]*" inputmode="numeric">
+        </fieldset>
+        <input name="DateOfBirth" type="hidden" id="date-of-birth-hidden-mck" value="">
+        <small id="date-of-birth-validation-mck" class="invalid-feedback validation-msg d-none">Your retirement is
+          invalid</small>
+      </div>
+
+      <p class="estimate-label">Have you had a estimate regarding your retirement choice?</p>
+
+      <div class="control-gap">
+        <fieldset>
+          <input type="radio" id="estimate-yes-mck" name="request-estimate" value="Yes">
+          <label for="estimate-yes">Yes</label><br>
+          <input type="radio" id="estimate-no-mck" name="request-estimate" value="No">
+          <label for="estimate-no">No</label><br>
+        </fieldset>
+      </div>
+
+      <div class="notification-alert">
+        <div class="notification-alert-wrapper">
+          <div class="d-flex"><img src="/Bootstrap4/sprites/white-warning.svg"></i></div>
+          <div class="notification-alert-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-controls">
+        <div>
+          <button type="button" class="btn btn-primary">
+            Submit
+          </button>
+          <a href="#">Cancel</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      new RetirementWidget("mck");
+    })();
+  </script>
+</body>
+
+</html>

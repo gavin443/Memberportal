@@ -1,0 +1,113 @@
+h3.line-title {
+  border-bottom: 1px solid #dee2e6;
+  line-height: 0.1em;
+  margin-bottom: 30px;
+  font-size: 1.422em;
+}
+h3.line-title span {
+  background: #fff;
+  padding: 0 10px 0 0px;
+}
+
+.d-visible {
+  visibility: hidden;
+}
+
+.flex-controls {
+  align-items: flex-start;
+  justify-content: space-between;
+  line-height: 38px;
+}
+.flex-controls .btn:first-of-type {
+  margin-right: 10px;
+}
+
+.control-gap {
+  margin-bottom: 10px;
+}
+
+.notification-alert {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  border-radius: 4px;
+}
+.notification-alert .notification-alert-wrapper {
+  border-radius: inherit;
+  display: flex;
+}
+.notification-alert .notification-alert-wrapper div:first-of-type {
+  border-radius: 4px 0 0 4px;
+  background-color: #035597;
+}
+.notification-alert .notification-alert-wrapper div:first-of-type img {
+  margin: 8px;
+  align-self: center;
+  min-width: 16px;
+}
+.notification-alert .notification-alert-wrapper .notification-alert-content {
+  border: 1px solid #035597;
+  border-radius: 0 4px 4px 0;
+  padding: 10px;
+  flex: 1 auto;
+}
+
+@media only screen and (max-width: 375px) {
+  .flex-controls {
+    align-items: flex-start;
+    justify-content: space-between;
+    line-height: 38px;
+    flex-direction: column-reverse;
+    row-gap: 5px;
+  }
+  .flex-controls div {
+    width: 100%;
+  }
+  .flex-controls .btn.btn-primary {
+    width: 100%;
+  }
+}
+.dob-label {
+  margin-bottom: 0;
+}
+
+.helper-text {
+  margin-bottom: 0.25rem;
+  font-size: 14px;
+  color: #747474;
+  margin-top: -0.5rem;
+}
+
+.dob-inputs {
+  display: inline-block;
+}
+
+.dob-inputs .form-control.date-of-birth {
+  width: 181px;
+}
+
+.dob-inputs .form-control.dob-single-part {
+  width: 63px;
+}
+
+.dob-inputs input::-webkit-outer-spin-button,
+.dob-inputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dob-inputs input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.validation-msg {
+  display: block;
+  min-height: 1.5em;
+}
+
+.form-control.is-invalid {
+  background: none;
+  padding-right: 0.75em;
+}/*# sourceMappingURL=styles.css.map */
