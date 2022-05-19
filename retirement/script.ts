@@ -2,6 +2,9 @@ class RetirementWidget {
   private dobFull: HTMLInputElement;
   private dobValidation: HTMLElement;
   private dobInputs: NodeListOf<Element>;
+  private benefitOptions: NodeListOf<HTMLInputElement>;
+  private estimateNotification: HTMLElement;
+  private benefitForm: HTMLFormElement;
 
   constructor(private widgetId: string) {
     this.init();
@@ -11,6 +14,14 @@ class RetirementWidget {
       `date-of-birth-validation-${this.widgetId}`
     ) as HTMLElement;
 
+    this.estimateNotification = document.getElementById(
+      `estimate-notification-${this.widgetId}`
+    ) as HTMLElement;
+
+    this.benefitOptions = document.querySelectorAll(
+      'input[name="request-estimate"]'
+    ) as NodeListOf<HTMLInputElement>;
+
     this.dobFull = document.getElementById(
       `date-of-birth-hidden-${this.widgetId}`
     ) as HTMLInputElement;
@@ -18,6 +29,11 @@ class RetirementWidget {
     this.dobInputs = document.querySelectorAll(
       ".dob-single-part"
     ) as NodeListOf<Element>;
+
+    this.benefitForm = document.getElementById(
+      `benefit-form-${this.widgetId}`
+    ) as HTMLFormElement;
+
     this.setupListeners();
   }
 
@@ -32,6 +48,30 @@ class RetirementWidget {
   }
 
   private setupListeners(): void {
+    this.benefitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (this.dobFull.value && this.validateDOB(this.dobFull.value)) {
+        this.benefitForm.submit();
+        return true;
+      } else {
+        this.dobValidation.classList.toggle("d-none", false);
+        document.querySelectorAll(".dob-single-part").forEach((dob) => {
+          dob.classList.toggle("is-invalid", true);
+        });
+        return false;
+      }
+    });
+
+    this.benefitOptions.forEach((node) => {
+      node.addEventListener("click", () => {
+        const isTrue: boolean =
+          document.querySelector<HTMLInputElement>(
+            `input[name="request-estimate"]:checked`
+          ).value == "Yes";
+        this.estimateNotification.classList.toggle("d-none", isTrue);
+      });
+    });
+
     this.dobInputs.forEach((node) => {
       node.addEventListener("blur", () => {
         const day = (
@@ -47,20 +87,9 @@ class RetirementWidget {
         const year = (
           document.querySelector("[name='DateOfBirthYear']") as HTMLInputElement
         ).value;
-        //validate date
-        if (day && month && year) {
+
+        if (day && month && year)
           this.dobFull.value = day + "/" + month + "/" + year;
-          this.dobValidation.classList.toggle(
-            "d-none",
-            this.validateDOB(this.dobFull.value)
-          );
-          document.querySelectorAll(".dob-single-part").forEach((dob) => {
-            dob.classList.toggle(
-              "is-invalid",
-              !this.validateDOB(this.dobFull.value)
-            );
-          });
-        }
       });
     });
   }
