@@ -1,0 +1,176 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Web.DataResolving;
+
+<div class="@Model.CssClass">
+
+
+
+
+    @*@foreach (var item in Model.Items)
+        {
+            var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+
+            <li @Html.InlineEditingAttributes(Model.ProviderName, Model.ContentType.FullName, (Guid)item.Fields.Id)>
+                <h3>
+                    <a @Html.InlineEditingFieldAttributes("Title", "ShortText") href="@navigateUrl">@item.Fields.Title</a>
+                </h3>
+
+                <div>
+                    <span class="text-muted">
+                        @item.GetDateTime("PublicationDate", "MMM d, yyyy")
+                    </span>
+                </div>
+
+                <div @Html.InlineEditingFieldAttributes("Summary", "ShortText")>@Html.HtmlSanitize((string)item.Fields.Summary)</div>
+
+                <a href="@navigateUrl">@Html.Resource("FullStory")</a>
+            </li>
+        }*@
+    <style>
+        .section-title {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            margin: 0 0 16px;
+            font-size: .9375em;
+            //color: #002351;
+            padding-right: 8px;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+            .section-title:after {
+                content: "\00a0|";
+                font-weight: 400;
+            }
+
+        .band {
+            width: 100%;
+            /* max-width: 1240px;*/
+            margin: 0 auto;
+            display: grid;
+            /*grid-template-columns: 1fr; remeber do mobile first*/
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 30px;
+        }
+
+        .news-card {
+            /* background: white;*/
+            text-decoration: none;
+            color: #444;
+            background-color: transparent;
+            /*   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          */ display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-height: 100%;
+            position: relative;
+            top: 0;
+            -webkit-transition: all .1s ease-in;
+            transition: all .1s ease-in;
+        }
+
+        .news-card:hover {
+            top: -2px;
+            /*     -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);*/
+        }
+
+        .news-card article {
+            margin-top: 20px;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+        .news-card h1 {
+            font-size: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        .news-card p {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .news-card span {
+            font-size: 12px;
+            font-weight: bold;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin: 2em 0 0 0;
+        }
+
+        .news-card .thumb {
+            padding-bottom: 60%;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .band > .news-item:first-child {
+            grid-column: 1 / span 2;
+        }
+
+        p.line-title {
+            border-bottom: 1px solid #dee2e6;
+            line-height: 0.1em;
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <div class="band">
+        @foreach (var item in Model.Items)
+        {
+            <div class="news-item">
+                <a href="https://design.tutsplus.com/articles/international-artist-feature-malaysia--cms-26852" class="news-card">
+                    <div class="thumb"
+                         style="background-image: url(https://cdn-suk-memberportal-dev-001.azureedge.net/mp-sitefinity-dev/images/default-source/carousel-landing-page-images/wind-turbines-at-sunrise-.jpg?sfvrsn=33b357de_1/Wind-turbines-at-sunrise-.jpg); ">
+                    </div>
+                    <article>
+                        <h1>RPMI has rebranded to Railpen</h1>
+                        <p>
+                            The Scheme's administrator, RPMI, has now rebranded to Railpen. The day-to-day administration
+                            and management of your pension is not affected
+                        </p>
+                        <span>@item.GetDateTime("PublicationDate", "MMM d, yyyy")</span>
+                    </article>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+    @if (Model.ShowPager)
+    {
+        @Html.Action("Index", "ContentPager", new
+        {
+            currentPage = Model.CurrentPage,
+                        totalPagesCount = Model.TotalPagesCount.Value,
+                        redirectUrlTemplate = ViewBag.RedirectPageUrlTemplate
+        })
+    }
+
+</div>
