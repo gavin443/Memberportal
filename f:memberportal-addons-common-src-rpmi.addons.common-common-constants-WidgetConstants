@@ -1,0 +1,10 @@
+added
+
+
+        public static class HeroBanner
+        {
+            public const string Name = "HeroBanner";
+
+            public const string Title = "Hero Banner";
+    
+        }
