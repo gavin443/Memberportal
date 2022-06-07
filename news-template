@@ -36,7 +36,7 @@
             letter-spacing: .1em;
             margin: 0 0 16px;
             font-size: .9375em;
-            //color: #002351;
+
             padding-right: 8px;
             font-weight: 700;
             font-size: 1.1em;
@@ -53,9 +53,32 @@
             margin: 0 auto;
             display: grid;
             /*grid-template-columns: 1fr; remeber do mobile first*/
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr;
             grid-template-rows: auto;
             grid-gap: 30px;
+        }
+
+        a.news-card:link {
+            text-decoration: none;
+        }
+
+
+        a.news-card:visited {
+            text-decoration: none;
+        }
+
+
+        a.news-card:hover {
+            text-decoration: none;          
+        }
+
+            a.news-card:hover h1 {
+                color: #004d9c;
+            }
+
+
+        a.news-card:active {
+            text-decoration: none;
         }
 
         .news-card {
@@ -68,25 +91,21 @@
           */ display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
+            flex-direction: row;
             min-height: 100%;
             position: relative;
             top: 0;
             -webkit-transition: all .1s ease-in;
             transition: all .1s ease-in;
+            column-gap: 20px;
         }
 
-        .news-card:hover {
-            top: -2px;
-            /*     -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-                box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);*/
-        }
+            .news-card:hover .thumb {
+                transition: 1s ease;
+                -webkit-filter: brightness(100%);
+            }
 
         .news-card article {
-            margin-top: 20px;
             -webkit-box-flex: 1;
             -ms-flex: 1;
             flex: 1;
@@ -102,11 +121,12 @@
             justify-content: space-between;
         }
 
-        .news-card h1 {
-            font-size: 20px;
-            margin: 0;
-            color: #333;
-        }
+            .news-card h1 {
+                font-size: 20px;
+                margin: 0;
+                color: #333;
+                font-family: 'Roboto';
+            }
 
         .news-card p {
             -webkit-box-flex: 1;
@@ -122,23 +142,73 @@
             text-transform: uppercase;
             letter-spacing: .05em;
             margin: 2em 0 0 0;
+            display:block;
         }
 
-        .news-card .thumb {
-            padding-bottom: 60%;
-            background-size: cover;
-            background-position: center center;
-        }
+            .news-card .thumb {
+                padding-bottom: 60%;
+                background-size: cover;
+                background-position: center center;
+                -webkit-filter: brightness(70%);
+                transition: 1s ease;
+            }
 
-        .band > .news-item:first-child {
-            grid-column: 1 / span 2;
-        }
 
         p.line-title {
             border-bottom: 1px solid #dee2e6;
             line-height: 0.1em;
             margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: 'Roboto';
+            color: #4c4c4c;
         }
+
+        .news-card .thumb {
+            width: 80px;
+            height: 80px;
+            padding-bottom: 0%;
+        }
+
+        article h1 {
+            padding-top: 0px;
+        }
+
+@@media (min-width: 60em) {
+
+     
+        .news-card {
+            flex-direction: column;
+            column-gap:initial;
+        }
+  .news-card article {
+    padding-top: 20px;
+  }
+  .news-card article h1 {
+    padding-top: 0.5rem;
+    padding-bottom:0.5rem;
+  }
+  .news-card .thumb {
+    width: initial;
+    height: initial;
+    margin-top: 0px;
+    padding-bottom: 60%;
+  }
+
+  .band {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+        .band > .news-item:first-child {
+            grid-column: 1 / span 2;
+        }
+
+
+  .item-1 h1 {
+    font-size: 24px;
+  }
+}
+
     </style>
 
     <div class="band">
@@ -154,14 +224,15 @@
                         <p>
                             The Scheme's administrator, RPMI, has now rebranded to Railpen. The day-to-day administration
                             and management of your pension is not affected
+                            <span>@item.GetDateTime("PublicationDate", "MMM d, yyyy")</span>
                         </p>
-                        <span>@item.GetDateTime("PublicationDate", "MMM d, yyyy")</span>
+                        
                     </article>
                 </a>
             </div>
         }
     </div>
-</div>
+
 
     @if (Model.ShowPager)
     {
