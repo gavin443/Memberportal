@@ -1,0 +1,32 @@
+using System.ComponentModel;
+using System.Web.Mvc;
+using RPMI.Addon.Common.Common.Constants;
+using RPMI.Addon.Common.Mvc.Models.HeroBanner;
+using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
+using Telerik.Sitefinity.Modules.Pages.Configuration;
+using Telerik.Sitefinity.Mvc;
+using Telerik.Sitefinity.Web.UI;
+
+namespace RPMI.Addon.Common.Mvc.Controllers.HeroBanner
+{
+    [EnhanceViewEngines]
+    [ControllerToolboxItem(Name = WidgetConstants.HeroBanner.Name,
+        Title = WidgetConstants.HeroBanner.Title,
+        CssClass = "sfMvcIcn",
+        SectionName = ToolboxesConfig.ContentToolboxSectionName)]
+    [IndexRenderMode(IndexRenderModes.NoOutput)]
+    public class HeroBannerController : Controller
+    {
+        [TypeConverter(typeof(ExpandableObjectConverter))]
+        public HeroBannerViewModel ViewModel { get; set; } = new HeroBannerViewModel();
+
+        public ActionResult Index()
+        {           
+            return this.View("Index", this.ViewModel);
+        }
+
+        /// <inheritDocs/>
+        protected override void HandleUnknownAction(string actionName) => 
+            this.ActionInvoker.InvokeAction(this.ControllerContext, "Index");
+    }
+}
