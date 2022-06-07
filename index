@@ -1,0 +1,30 @@
+@model RPMI.Addon.Common.Mvc.Models.HeroBanner.HeroBannerViewModel
+@using RPMI.Sitefinity.Common.Extensions
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+@{
+    var widgetId = Guid.NewGuid();
+}
+
+<style>
+    .hero-homepage .hero-homepage-bg-image {
+        background-image: url( @Model.Banner );
+    }
+
+    .hero-homepage .hero-homepage-bg-image {
+        background-position-x: @Model.BackgroundPositionX;
+        background-position-y: @Model.BackgroundPositionY;
+    }
+</style>
+
+<div id="hero-banner-widget-@widgetId" class="hero-homepage @Model.WrapperClass">
+    <div class="hero-homepage-bg-image"></div>
+    <div class="hero-homepage-content content-placement">
+        <h1 class="page-title">@Model.Title</h1>
+        <p class="sub-title">@Model.SubTitle</p>
+        <div class="banner-controls">
+            <a class="btn-bgstroke" data-sf-ec-immutable="">Register Now</a>
+            <a class="btn-bgstroke" data-sf-ec-immutable="">Log In</a>
+        </div>
+    </div>
+</div>
