@@ -1,0 +1,72 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@Html.QueryBuilderScriptReferences()
+
+<uib-tabset class="nav-tabs-wrapper">
+    <uib-tab heading="Hero Banner Properties">
+
+        <div class="form-group">
+            <label for="wrapper-class">Wrapper Class</label>
+            <div class="row mb-2">
+                <div class="col-xs-12">
+                    <input class="form-control" id="wrapper-class" type="text" ng-model="properties.WrapperClass.PropertyValue" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="banner-image">Title</label>
+            <div class="row mb-2">
+                <div class="col-xs-12">
+                    <input class="form-control" id="banner-image" type="text" ng-model="properties.Banner.PropertyValue" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="banner-image-pos-x">Banner Position X</label>
+            <div class="row mb-2">
+                <div class="col-xs-12">
+                    <select class="form-control" id="banner-image-pos-x" type="text" ng-model="properties.BackgroundPositionX.PropertyValue">
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                        <option value="center">Center</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="banner-image-pos-y">Banner Position Y</label>
+            <div class="row mb-2">
+                <div class="col-xs-12">
+                    <select class="form-control" id="banner-image-pos-y" type="text" ng-model="properties.BackgroundPositionY.PropertyValue">
+                        <option value="top">Top</option>
+                        <option value="bottom">Bottom</option>
+                        <option value="center">Center</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="banner-title">Title</label>
+            <div class="row mb-2">
+                <div class="col-xs-12">
+                    <input class="form-control" id="banner-title" type="text" ng-model="properties.Title.PropertyValue" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="banner-sub-title">Sub Title</label>
+            <div class="row mb-2">
+                <div class="col-xs-12">
+                    <input class="form-control" id="banner-sub-title" type="text" ng-model="properties.SubTitle.PropertyValue" />
+                </div>
+            </div>
+        </div>
+
+    </uib-tab>
+</uib-tabset>
