@@ -1,0 +1,26 @@
+using Audit.Core.Attributes;
+using Audit.Core.Enums;
+
+namespace RPMI.Addon.Common.Mvc.Models.HeroBanner
+{
+    public class HeroBannerViewModel
+    {
+        [Audit(AuditLevel.Exclude)]
+        public string Title { get; set; } = "Railways Pension Scheme";
+
+        [Audit(AuditLevel.Exclude)]
+        public string BackgroundPositionX { get; set; } = "left";
+
+        [Audit(AuditLevel.Exclude)]
+        public string BackgroundPositionY { get; set; } = "center";
+
+        [Audit(AuditLevel.Exclude)]
+        public string Banner { get; set; } = "https://cdn-suk-memberportal-dev-001.azureedge.net/mp-sitefinity-dev/images/default-source/default-album/houses-of-parliament.jpg?sfvrsn=a2041871_1/Houses-of-Parliament.jpg";
+
+        [Audit(AuditLevel.Exclude)]
+        public string SubTitle { get; set; } = "Our Purpose is to secure our members' future";
+
+        [Audit(AuditLevel.Exclude)]
+        public string WrapperClass { get; set; } = string.Empty;
+    }
+}
